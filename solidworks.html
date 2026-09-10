@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh‑CN">
+<head>
+    <meta charset="UTF‑8">
+    <meta name="viewport" content="width=device‑width, initial‑scale=1.0">
+    <title>SolidWorks 完整使用教程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border‑box;
+        }
+        body {
+            font‑family: "Segoe UI", system‑ui, sans‑serif;
+            background‑color: #0f172a;
+            color: #e2e8f0;
+            background‑image: radial‑gradient(rgba(56,189,248,0.06) 1px, transparent 1px);
+            background‑size: 24px 24px;
+            min‑height: 100vh;
+            padding: 40px 20px;
+            line‑height:1.8;
+        }
+        .container{
+            max‑width:860px;
+            margin:0 auto;
+        }
+        .card{
+            background‑color:rgba(30,41,59,0.75);
+            border:1px solid rgba(56,189,248,0.18);
+            border‑radius:14px;
+            padding:36px;
+            box‑shadow:0 10px 30px rgba(0,0,0,0.35);
+            margin‑bottom:24px;
+        }
+        h1{
+            font‑size:2.4rem;
+            color:#38bdf8;
+            margin‑bottom:10px;
+        }
+        .subtitle{
+            color:#94a3b8;
+            font‑size:1.1rem;
+            margin‑bottom:30px;
+            padding‑bottom:16px;
+            border‑bottom:1px solid rgba(56,189,248,0.15);
+        }
+        h2{
+            color:#38bdf8;
+            margin:28px 0 12px;
+            font‑size:1.4rem;
+        }
+        h3{
+            color:#7dd3fc;
+            margin:20px 0 10px;
+            font‑size:1.15rem;
+        }
+        p{
+            color:#cbd5e1;
+            margin‑bottom:12px;
+        }
+        ul{
+            padding‑left:24px;
+            margin‑bottom:16px;
+            color:#cbd5e1;
+        }
+        li{
+            margin‑bottom:8px;
+        }
+        .tip‑box{
+            background:rgba(22,101,152,0.20);
+            border‑left:4px solid #38bdf8;
+            padding:14px 18px;
+            border‑radius:8px;
+            margin:16px 0;
+        }
+        .warn‑box{
+            background:rgba(180,83,9,0.20);
+            border‑left:4px solid #f97316;
+            padding:14px 18px;
+            border‑radius:8px;
+            margin:16px 0;
+        }
+        table{
+            width:100%;
+            border‑collapse:collapse;
+            margin:16px 0;
+        }
+        th,td{
+            border:1px solid rgba(56,189,248,0.2);
+            padding:10px 12px;
+        }
+        th{
+            background:rgba(56,189,248,0.12);
+            color:#38bdf8;
+        }
+        footer{
+            text‑align:center;
+            margin‑top:40px;
+            color:#64748b;
+            font‑size:0.9rem;
+        }
+        @media(max‑width:580px){
+            .card{
+                padding:22px 18px;
+            }
+            h1{
+                font‑size:1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h1>SolidWorks 使用完整教程</h1>
+        <div class="subtitle">零基础入门｜零件 · 装配 · 工程图</div>
+
+        <h2>一、SolidWorks 软件简介</h2>
+        <p>SolidWorks（简称SW）是达索公司旗下的参数化三维CAD设计软件，广泛用于机械设计、产品结构、工装夹具、钣金、3D打印领域。
+核心为<strong>参数化特征建模</strong>：模型由草图、尺寸、特征步骤组成，修改尺寸模型自动更新，便于迭代修改设计。</p>
+        <p>三大基础文件类型：</p>
+        <ul>
+            <li><strong>零件 *.sldprt</strong>：单个三维零部件，建模基础</li>
+            <li><strong>装配体 *.sldasm</strong>：多个零件配合组装，检查干涉、运动仿真</li>
+            <li><strong>工程图 *.slddrw</strong>：由3D模型生成2D加工图纸，输出生产图纸</li>
+        </ul>
+
+        <h2>二、软件界面基础认识</h2>
+        <ul>
+            <li><strong>FeatureManager设计树（左侧）</strong>：记录全部草图、特征步骤，可以修改、编辑、压缩特征</li>
+            <li><strong>命令管理器</strong>：顶部选项卡，草图、特征、装配、工程图等功能按钮</li>
+            <li><strong>绘图区</strong>：模型显示窗口，鼠标操作旋转平移缩放</li>
+            <li><strong>PropertyManager属性面板</strong>：选择命令后弹出，设置参数</li>
+            <li><strong>Toolbox库</strong>：自带国标标准件库，螺栓、轴承、齿轮等直接调用</li>
+        </ul>
+
+        <h3>鼠标基础视图操作</h3>
+        <ul>
+            <li>鼠标中键按住拖动：旋转模型</li>
+            <li>Shift + 中键拖动：平移视图</li>
+            <li>滚动中键：放大缩小视图</li>
+            <li>右键拖拽：鼠标手势，快速调用命令</li>
+        </ul>
+
+        <h2>三、草图绘制（建模根基）</h2>
+        <p>所有三维零件几乎都从草图开始绘制。新建零件，选择基准面，点击【草图绘制】进入草图环境。</p>
+        <h3>常用绘图工具</h3>
+        <ul>
+            <li>基础图元：直线、矩形、圆、圆弧、多边形</li>
+            <li>编辑工具：裁剪实体(T快捷键)、延伸、镜像、阵列、等距实体</li>
+            <li>转换实体引用：把模型边线投影到草图，快速复用轮廓</li>
+        </ul>
+        <h3>两大约束：几何约束 + 尺寸约束</h3>
+        <ul>
+            <li>几何约束：重合、平行、垂直、同心、相切、对称、相等</li>
+            <li>智能尺寸：标注长度、直径、角度，控制大小</li>
+        </ul>
+        <div class="tip‑box">
+            <strong>重要：草图要完全定义（线条黑色）</strong><br>
+蓝色=欠定义，可以随意拖动，后续修改模型容易出错；红色=约束冲突，存在矛盾约束需要删除冲突条件。
+        </div>
+        <div class="warn‑box">
+            草图禁止出现：开口轮廓、线条重叠、多余碎线段；拉伸实体草图必须封闭轮廓。
+        </div>
+
+        <h2>四、零件三维建模（特征）</h2>
+        <p>草图完成后，使用特征命令把2D草图生成为三维实体。</p>
+        <h3>基础核心特征</h3>
+        <ul>
+            <li><strong>拉伸凸台/基体</strong>：草图沿垂直方向拉伸生成实体；拉伸切除：挖除材料</li>
+            <li><strong>旋转凸台</strong>：草图绕一条中心线旋转生成回转零件（轴、盘类）</li>
+            <li><strong>扫描</strong>：截面草图沿着一条路径扫掠成型（管道、手柄）</li>
+            <li><strong>放样</strong>：多个不同截面之间过渡生成实体</li>
+        </ul>
+        <h3>工程修饰特征</h3>
+        <ul>
+            <li>圆角、倒角：边角处理</li>
+            <li>抽壳：把实体挖空，保留指定壁厚（壳体零件）</li>
+            <li>筋特征：添加加强筋板</li>
+            <li>异形孔向导：快速创建螺纹孔、沉头孔等各类标准孔</li>
+            <li>阵列/镜像：复制重复结构，线性阵列、圆周阵列</li>
+        </ul>
+
+        <h2>五、装配体设计</h2>
+        <p>新建装配体文件，插入已经做好的零件，使用【配合】约束零件之间位置关系。</p>
+        <h3>常用标准配合</h3>
+        <ul>
+            <li>重合：两个面、点贴合在一起</li>
+            <li>同心：圆柱面、圆孔同轴（轴装入孔）</li>
+            <li>平行、垂直、距离、角度约束</li>
+        </ul>
+        <h3>装配常用功能</h3>
+        <ul>
+            <li>干涉检查：检查零件互相碰撞，发现设计错误</li>
+            <li>爆炸视图：把装配散开，用于展示结构原理图</li>
+            <li>Toolbox插入标准件，无需手动画螺栓螺母</li>
+            <li>生成BOM物料清单，统计零件数量规格</li>
+        </ul>
+        <div class="tip‑box">
+            两种设计思路：<br>
+            自下而上：先画全部零件，再装配（新手推荐）；自上而下：在装配内部直接生成新零件，适合复杂整机设计。
+        </div>
+
+        <h2>六、工程图输出</h2>
+        <p>工程图用于工厂加工生产，从三维模型快速生成二维图纸。</p>
+        <ul>
+            <li>插入模型视图：主视图、俯视图、左视图；剖视图、局部放大视图</li>
+            <li>智能尺寸自动继承模型尺寸，添加公差、表面粗糙度、中心线</li>
+            <li>添加标题栏、技术要求，另存PDF给加工厂家</li>
+        </ul>
+
+        <h2>七、高频快捷键参考</h2>
+        <table>
+            <tr>
+                <th>快捷键</th>
+                <th>功能</th>
+            </tr>
+            <tr><td>Ctrl+N</td><td>新建文件</td></tr>
+            <tr><td>Ctrl+S</td><td>保存</td></tr>
+            <tr><td>T</td><td>草图裁剪实体</td></tr>
+            <tr><td>Ctrl+8</td><td>正视于草图平面</td></tr>
+            <tr><td>Ctrl+Q</td><td>重建全部模型</td></tr>
+            <tr><td>Delete</td><td>删除选中对象</td></tr>
+        </table>
+
+        <h2>八、新手常见问题与避坑</h2>
+        <ul>
+            <li>❌草图经常报错：检查是否线条重叠、开口、约束冲突；尽量做到草图完全定义</li>
+            <li>❌特征失败无法生成：检查草图轮廓，拉伸切除不要出现零厚度几何体</li>
+            <li>❌装配零件乱跑：缺少足够配合约束；优先使用同心+重合定位</li>
+            <li>❌工程图尺寸乱掉：根源是零件建模草图不规范，修改零件工程图会同步更新</li>
+            <li>✅保存习惯：零件、装配文件放在同一个文件夹，移动整套文件要打包，否则装配会丢失零件引用</li>
+        </ul>
+
+        <h2>九、学习路线建议</h2>
+        <ol>
+            <li>熟悉界面与鼠标视图操作</li>
+            <li>重点练习草图绘制与约束（重中之重）</li>
+            <li>练习基础特征，做简单零件：底座、轴、壳体</li>
+            <li>学习装配、干涉检查、爆炸视图</li>
+            <li>练习工程图出图、标注公差，输出PDF图纸</li>
+            <li>进阶：钣金、焊件、运动仿真、简单有限元分析</li>
+        </ol>
+    </div>
+    <footer>
+        © 2026 SolidWorks教程页面｜YT2006
+    </footer>
+</div>
+</body>
+</html>
